@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./scripts/index.js" defer></script>
+    <title>Subscription Checkout</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="payment-details-box">
+          <div class="title-box">
+            <img class="logo" src="./img/neuralite-logo.svg" alt="Neuralite logo" aria-hidden="true" />
+            <h1 class="title">Upgrade To Plus</h1>
+            <p class="subtitle">Upgrade today and take your AI-powered productivity to the next level.</p>
+          </div>
+          <form class="form-box" action="#">
+            <fieldset>
+              <div class="input-box">
+                <label class="input-box__item">
+                  Billed to
+                  <input type="text" placeholder="Enter first & last name" />
+                </label>
+                <label class="input-box__item">
+                  Payment Details
+                  <ul class="checkbox-list">
+                    <li class="checkbox-list__item checkbox-list__item--active" aria-label="checkbox">
+                      <img src="./img/atm-card.svg" alt="" />
+                      Credit Card
+                    </li>
+                    <li class="checkbox-list__item" aria-label="checkbox">
+                      <img src="./img/bank.svg" alt="" />
+                      Bank Transfer
+                    </li>
+                    <li class="checkbox-list__item" aria-label="checkbox">
+                      <img src="./img/point-card.svg" alt="" />
+                      Points
+                    </li>
+                  </ul>
+                </label>
+                <label class="input-box__item">
+                  Email Address
+                  <input type="email" placeholder="Enter email address" />
+                </label>
+                <label class="input-box__item">
+                  Country
+                  <select name="" id="">
+                    <option value="" selected>Finland</option>
+                  </select>
+                </label>
+                <label class="input-box__item">
+                  Postal Code
+                  <input type="email" placeholder="00270" />
+                </label>
+              </div>
+              <div class="button-box">
+                <button class="button-box__item cancel-btn" type="reset">Cancel</button>
+                <button class="button-box__item subscribe-btn" type="submit">Subscribe</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <article class="plan-box">
+          <h2 class="plan-box__title">Starter Plan</h2>
+          <ul class="plan-list">
+            <li class="plan-list__item plan-checkbox--active">
+              <span class="plan-checkbox__check-icon check-icon--active"><span></span></span>
+              <div>
+                <h2 class="plan-checkbox__period">Pay monthly</h2>
+                <span class="plan-checkbox__price">$20/ Month/ Member</span>
+              </div>
+            </li>
+            <li class="plan-list__item plan-checkbox">
+              <span class="plan-checkbox__check-icon">
+                <span></span>
+              </span>
+              <div>
+                <h2 class="plan-checkbox__period">Pay Annual</h2>
+                <span class="plan-checkbox__price">$16/ Month/ Member</span>
+              </div>
+            </li>
+          </ul>
+          <div class="total-price">
+            <span>Total</span>
+            <span class="total-price__price">$20 / Month</span>
+          </div>
+          <div class="disclaimer">
+            <img src="./img/unlock_key_alt.svg" alt="" aria-hidden="true" />
+            <p>This environment is for demonstration purposes only. Please refrain from entering any actual sensitive data.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
