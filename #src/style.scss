@@ -1,0 +1,267 @@
+@import "./reset.scss";
+$white-color: #ffffff;
+$black-color: #121826;
+$gray-color: #4d5562;
+$light-gray-color: #d2d5da;
+$violet-color: #5425af;
+$light-violet-color: #ece9fc;
+$article-bg-color: #f0f3f6;
+$text-styles: (
+  heading-text: (
+    font-size: 1.5rem,
+    font-weight: 600,
+    color: $black-color,
+  ),
+  big-text: (
+    font-size: 1.25rem,
+    font-weight: 600,
+    color: $black-color,
+  ),
+
+  body-text: (
+    font-size: 1rem,
+    font-weight: 500,
+    color: $gray-color,
+  ),
+  small-text: (
+    font-size: 0.875rem,
+    font-weight: 400,
+    color: $white-color,
+  ),
+  extra-small-text: (
+    font-size: 0.75rem,
+    font-weight: 300,
+    color: $gray-color,
+  ),
+);
+@mixin text-format($type) {
+  font-size: map-get(map-get($text-styles, $type), font-size);
+  font-weight: map-get(map-get($text-styles, $type), font-weight);
+  color: map-get(map-get($text-styles, $type), color);
+}
+.wrapper {
+  min-height: 100vh;
+  min-width: 100%;
+  background-color: $white-color;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: stretch;
+}
+.payment-details-box {
+  max-width: 100%;
+  padding: 2.5rem 4.5rem;
+}
+.title-box {
+  margin-bottom: 2rem;
+}
+.logo {
+  margin-bottom: 1rem;
+}
+.title {
+  @include text-format(heading-text);
+  margin-bottom: 0.75rem;
+}
+.subtitle {
+  @include text-format(body-text);
+}
+.input-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  row-gap: 1rem;
+  column-gap: 1.5rem;
+  margin-bottom: 2rem;
+  &__item {
+    @include text-format(body-text);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    input,
+    select {
+      @include text-format(body-text);
+      font-weight: 500;
+      color: $black-color;
+      padding: 1rem;
+      border: 2px solid $light-gray-color;
+      border-radius: 0.5rem;
+      background-color: inherit;
+      &::placeholder {
+        @include text-format(body-text);
+        font-weight: 400;
+        color: $black-color;
+      }
+    }
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+.checkbox-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: stretch;
+  flex-grow: 1;
+  gap: 1rem;
+  &__item {
+    @include text-format(body-text);
+    color: $black-color;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 2px solid $light-gray-color;
+    border-radius: 0.5rem;
+    background-color: inherit;
+    img {
+      display: block;
+      max-height: 1.5rem;
+      max-width: 1.5rem;
+    }
+  }
+  &__item--active {
+    border: 2px solid $violet-color;
+    background-color: $light-violet-color;
+  }
+}
+.button-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  &__item {
+    @include text-format(body-text);
+    color: $black-color;
+    display: block;
+    padding: 1.5rem;
+    background-color: $light-gray-color;
+    border-radius: 1rem;
+  }
+}
+.subscribe-btn {
+  flex: 1;
+  color: $white-color;
+  background-color: $violet-color;
+}
+.plan-box {
+  flex: 1;
+  max-width: 32.5rem;
+  margin: 1.25rem;
+  padding: 2rem;
+  background-color: $article-bg-color;
+  border-radius: 1rem;
+  background-image: url(../img/Checkout-background.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  &__title {
+    @include text-format(big-text);
+    margin-bottom: 0.75rem;
+  }
+}
+.plan-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  &__item {
+    padding: 1rem;
+    border: 2px solid $light-gray-color;
+    border-radius: 1rem;
+    background-color: $white-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  &::after {
+    content: "";
+    display: block;
+    border: 1px solid $light-gray-color;
+    margin: 2rem 0;
+  }
+}
+.plan-checkbox {
+  &__check-icon {
+    display: block;
+    min-width: 1.25rem;
+    min-height: 1.25rem;
+    background-color: $white-color;
+    border: 2px solid $light-gray-color;
+    border-radius: 50%;
+  }
+  &__period {
+    @include text-format(big-text);
+    margin-bottom: 0.75rem;
+  }
+  &__price {
+    @include text-format(body-text);
+    color: $black-color;
+    font-weight: 400;
+  }
+}
+.plan-checkbox--active {
+  border: 2px solid $violet-color;
+  background-color: $light-violet-color;
+}
+.check-icon--active {
+  border: 2px solid $violet-color;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    height: 0.75rem;
+    width: 0.75rem;
+    background-color: $violet-color;
+    border-radius: 50%;
+  }
+}
+.total-price {
+  @include text-format(big-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.disclaimer {
+  @include text-format(extra-small-text);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+@media (min-width: 1016px) and (max-width: 1280px) {
+  .payment-details-box {
+    max-width: 60%;
+  }
+}
+@media (min-width: 861px) and (max-width: 1015px) {
+  .checkbox-list {
+    align-items: stretch;
+  }
+  .payment-details-box {
+    padding: 1.25rem;
+    max-width: 50%;
+  }
+}
+@media (min-width: 640px) and (max-width: 860px) {
+  .container {
+    flex-direction: column;
+  }
+  .payment-details-box {
+    padding: 1.25rem;
+    order: 2;
+  }
+  .plan-box {
+    max-width: 100%;
+    background-image: none;
+  }
+}
